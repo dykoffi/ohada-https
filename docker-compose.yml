@@ -1,0 +1,9 @@
+version: "3.9" # optional since v1.27.0
+services:
+  haproxy:
+    network_mode: host
+    image: haproxytech/haproxy-alpine:2.4
+    restart: unless-stopped
+    volumes: 
+      - ./haproxy:/usr/local/etc/haproxy
+      - ./certificates:/certificates
